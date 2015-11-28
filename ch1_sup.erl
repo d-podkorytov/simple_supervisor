@@ -45,5 +45,4 @@ tick_loop()->
 status_loop()->
  timer:sleep(2900),
  io:format("status ~p ~n",[{status,sys:get_status(id1),sys:get_status(id2)}]),
- status_loop().
- 
+ status_loop(). 
