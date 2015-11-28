@@ -29,7 +29,8 @@ start()->
  timer:sleep(500),
 
 % start loop for ticks
- spawn(fun()-> tick_loop() end).
+ spawn(fun() -> tick_loop() end),
+ spawn(fun()-> status_loop() end).
 
 tick(ID)->
     Pid=whereis(ID),
@@ -39,4 +40,10 @@ tick_loop()->
  tick(id1),timer:sleep(500),
  tick(id2),timer:sleep(500),
  tick_loop().
-     
+
+% show status for id1 and id2 services every 2.9 sec
+status_loop()->
+ timer:sleep(2900),
+ io:format("status ~p ~n",[{status,sys:get_status(id1),sys:get_status(id2)}]),
+ status_loop().
+ 
