@@ -1,6 +1,6 @@
-An simple_one_to_one supervisor example.
+# An simple_one_to_one supervisor example.
 
-Modules:
+## Modules:
 ch_sup.erl is supervisor
 ch1.erl    is child service for supervision.
 
